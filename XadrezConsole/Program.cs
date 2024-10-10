@@ -12,6 +12,7 @@ namespace XadrezC
         static void Main(string[] args)
         {
             Tabuleiro tab = new Tabuleiro(8,8);
+            Tela.imprimirTabuleiro(tab);
             ///System.Console.WriteLine("tabuleiro: "+ tab.linhas);
             Console.ReadLine();
 
