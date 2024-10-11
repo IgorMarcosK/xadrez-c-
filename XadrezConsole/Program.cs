@@ -15,14 +15,21 @@ namespace XadrezC
         {
             try 
             {
-            Tabuleiro tab = new Tabuleiro(8,8);
+            PartidaDeXadrez partida = new PartidaDeXadrez();
+            
+            while(!partida.terminada)
+            {
+                Console.Clear();
+                Tela.imprimirTabuleiro(partida.tab);
 
-            tab.colocarPeca(new Torre(tab, Cor.Preto),new Posicao(5,0));
-            tab.colocarPeca(new Torre(tab, Cor.Branco),new Posicao(2,0));
-            tab.colocarPeca(new Torre(tab, Cor.Preto),new Posicao(1,0));
-            tab.colocarPeca(new Rei(tab, Cor.Branco),new Posicao(0,5));
+                Console.WriteLine();
+                Console.Write("Posição de origem: ");
+                Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
+                Console.Write("Posição de destino: ");
+                Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
 
-            Tela.imprimirTabuleiro(tab);
+                partida.executaMovimento(origem,destino);
+            }
             ///System.Console.WriteLine("tabuleiro: "+ tab.linhas);
             }
             catch (TabuleiroException e)

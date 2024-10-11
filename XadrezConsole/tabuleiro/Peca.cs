@@ -14,5 +14,9 @@ namespace tabuleiro
             this.cor = cor;
             this.movimentos = 0;
         }
+        public void incrimentarQtdMovimento()
+        {
+            movimentos++;
+        }
     }
 }
