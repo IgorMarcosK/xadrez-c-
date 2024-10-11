@@ -13,6 +13,8 @@ namespace XadrezC
     {
         static void Main(string[] args)
         {
+            try 
+            {
             Tabuleiro tab = new Tabuleiro(8,8);
 
             tab.colocarPeca(new Torre(tab, Cor.Preto),new Posicao(0,0));
@@ -21,8 +23,12 @@ namespace XadrezC
 
             Tela.imprimirTabuleiro(tab);
             ///System.Console.WriteLine("tabuleiro: "+ tab.linhas);
+            }
+            catch (TabuleiroException e)
+            {
+                Console.WriteLine(e.Message);
+            }
             Console.ReadLine();
-
         }
     }
 }
