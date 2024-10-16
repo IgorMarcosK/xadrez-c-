@@ -20,11 +20,19 @@ namespace XadrezC
             while(!partida.terminada)
             {
                 Console.Clear();
+
                 Tela.imprimirTabuleiro(partida.tab);
 
                 Console.WriteLine();
                 Console.Write("Posição de origem: ");
                 Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
+
+                bool[,] posicoesPossiveis = partida.tab.peca(origem).movimentosPossiveis();
+
+                Console.Clear();
+                Tela.imprimirTabuleiro(partida.tab, posicoesPossiveis);
+
+                Console.WriteLine();
                 Console.Write("Posição de destino: ");
                 Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
 
