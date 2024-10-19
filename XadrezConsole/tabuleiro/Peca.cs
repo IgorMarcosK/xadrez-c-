@@ -6,7 +6,7 @@ namespace tabuleiro
         public Cor cor {get; protected set;}
         public int movimentos {get; protected set;}
         public Tabuleiro tab { get; protected set;}
-
+        
         public Peca(Tabuleiro tab, Cor cor)
         {
             this.posicao = null;
@@ -14,9 +14,13 @@ namespace tabuleiro
             this.cor = cor;
             this.movimentos = 0;
         }
-        public void incrimentarQtdMovimento()
+        public void incrementarQtdMovimento()
         {
             movimentos++;
+        }
+        public void decrementarQtdMovimento()
+        {
+            movimentos--;
         }
         public bool existeMovimentosPossiveis()
         {
