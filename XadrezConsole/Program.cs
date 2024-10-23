@@ -48,12 +48,15 @@ namespace XadrezC
                     Console.ReadLine();
                 }
             }
+            Tela.imprimirPartida(partida);
             ///System.Console.WriteLine("tabuleiro: "+ tab.linhas);
             }
+            
             catch (TabuleiroException e)
             {
                 Console.WriteLine(e.Message);
             }
+            
             Console.ReadLine();
         }
     }
